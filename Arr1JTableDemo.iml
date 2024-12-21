@@ -8,5 +8,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="com.intellij:forms_rt:7.0.3" level="project" />
+    <orderEntry type="library" name="gitee.l0km.common.cli" level="project" />
   </component>
 </module>
