@@ -23,10 +23,10 @@ public class Program {
         SwingUtils.setDefaultFont("Microsoft Sans Serif", 18);
 
         Options cmdLineOptions = new Options();
-        cmdLineOptions.addOption("r", "reverse-rows", false, "Reverse rows");
         cmdLineOptions.addOption("h", "help", false, "Show help");
         cmdLineOptions.addOption("w", "window", false, "Use window user interface");
         cmdLineOptions.addOption("i", "input-file", true, "Input file");
+        cmdLineOptions.addOption("o", "output-file", true, "Output file");
 
         CommandLineParser parser = new DefaultParser();
         CommandLine cmdLine = null;
@@ -59,6 +59,9 @@ public class Program {
                 list.add(b);
             }
             System.out.println(ninth.process(list));
+            PrintStream out = (cmdLine.hasOption("o")) ? new PrintStream(cmdLine.getOptionValue("o")) : System.out;
+            out.println(ninth.process(list));
+            out.close();
         }
     }
 }
